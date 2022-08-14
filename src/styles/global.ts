@@ -49,6 +49,10 @@ export const globalStyles = globalCss({
   },
 
   "#root, #__next": {
+    display: "flex",
     isolation: "isolate",
+    minHeight: "-webkit-fill-available",
+    height: "-webkit-fill-available",
+    maxHeight: "-webkit-fill-available",
   },
 });
