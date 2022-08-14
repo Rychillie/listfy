@@ -23,9 +23,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           type="image/png"
         />
 
-        <meta name="theme-color" content="#f9fafb" />
+        <meta name="theme-color" content="#ededed" />
 
-        <meta name="msapplication-TileColor" content="#f9fafb" />
+        <meta name="msapplication-TileColor" content="#ededed" />
 
         <meta name="robots" content="noindex" />
       </Head>
