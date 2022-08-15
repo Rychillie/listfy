@@ -12,6 +12,7 @@ export const Layout = styled("div", {
     flexDirection: "row",
     maxWidth: 1194,
     width: "100%",
+    mx: "auto",
     gap: 22,
   },
 });
