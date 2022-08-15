@@ -24,10 +24,12 @@ export const Sidebar = styled(motion.aside, {
   padding: "32px 24px",
   borderRadius: 12,
   color: "$gray12",
+  left: "-150%",
   width: "calc(100% - 32px)",
-  height: "calc(100% - 48px)",
+  height: "calc(100% - 32px)",
 
   "@lg": {
+    left: 0,
     position: "relative",
     maxWidth: "320px",
   },
@@ -36,6 +38,7 @@ export const Sidebar = styled(motion.aside, {
     isOpen: {
       true: {
         position: "absolute",
+        left: 16,
 
         "@lg": {
           position: "relative",
@@ -45,6 +48,7 @@ export const Sidebar = styled(motion.aside, {
       },
       false: {
         position: "absolute",
+        left: "-150%",
       },
     },
   },
