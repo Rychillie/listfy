@@ -1,7 +1,12 @@
 {
-  "short_name": "ListFy",
   "name": "ListFy",
+  "short_name": "ListFy",
+  "theme_color": "#EDEDED",
+  "background_color": "#EDEDED",
+  "display": "standalone",
   "description": "...",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/icons/android-36x36.png",
@@ -44,10 +49,5 @@
       "sizes": "192x192",
       "purpose": "maskable"
     }
-  ],
-  "start_url": "/",
-  "background_color": "#EDEDED",
-  "display": "standalone",
-  "scope": "/",
-  "theme_color": "#EDEDED"
+  ]
 }
