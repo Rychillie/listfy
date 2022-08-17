@@ -10,22 +10,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <link rel="shortcut icon" href="/assets/favicon.ico" />
-        <link
-          href="/assets/unicorn-apple.png"
-          rel="apple-touch-icon"
-          sizes="160x160"
-        />
-        <link
-          href="/assets/unicorn.png"
-          rel="icon"
-          sizes="160x160"
-          type="image/png"
-        />
-
-        <meta name="theme-color" content="#ededed" />
-
-        <meta name="msapplication-TileColor" content="#ededed" />
+        <link rel="icon" href="/icons/favicon.ico" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
 
         <meta name="robots" content="noindex" />
       </Head>
