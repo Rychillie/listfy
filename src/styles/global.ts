@@ -54,5 +54,6 @@ export const globalStyles = globalCss({
     minHeight: "-webkit-fill-available",
     height: "-webkit-fill-available",
     maxHeight: "-webkit-fill-available",
+    width: "100%",
   },
 });

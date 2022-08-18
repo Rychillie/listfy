@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { AppLayout } from "@layouts/app";
+import Welcome from "@components/Welcome";
 
 const Home: NextPage = () => {
   const [targetReached, setTargetReached] = useState(false);
@@ -52,11 +53,7 @@ const Home: NextPage = () => {
           <link rel="icon" href="/assets/favicon.ico" />
         </Head>
 
-        <main>
-          <span style={{ fontWeight: 700 }}>Hello</span>
-          <br />
-          <span style={{ fontWeight: 700 }}>{"Let's install the app?"}</span>
-        </main>
+        {Welcome()}
       </>
     );
   }

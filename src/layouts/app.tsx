@@ -27,7 +27,7 @@ const sidebarTransition = {
     },
   },
   closed: {
-    x: "-150%",
+    x: "150%",
     opacity: 0,
     transition: {
       type: "spring",
@@ -35,7 +35,7 @@ const sidebarTransition = {
     },
   },
   exit: {
-    x: "-150%",
+    x: "150%",
     opacity: 0,
     transition: {
       type: "spring",
