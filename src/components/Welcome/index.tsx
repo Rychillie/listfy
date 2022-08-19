@@ -1,40 +1,26 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { ContentContainer, ItemContainer } from "./styles";
+import Link from "next/link";
+import { LogoIcon } from "@components/icons";
+import {
+  Top,
+  Title,
+  Paragraph,
+  Container,
+  Row,
+  Button,
+  BtnLink,
+  Header,
+  Footer,
+  Logo,
+} from "./styles";
 
-const showOnLoad = {
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      duration: 0.4,
-    },
-  },
-  closed: {
-    y: "150%",
-    opacity: 0,
-    transition: {
-      type: "spring",
-      duration: 0.4,
-    },
-  },
-  exit: {
-    y: "150%",
-    opacity: 0,
-    transition: {
-      type: "spring",
-      duration: 0.4,
-    },
-  },
-};
-
-const container = {
-  hidden: { opacity: 0 },
+const TransitionEvent = {
+  duration: 0.6,
+  ease: [0.43, 0.13, 0.23, 0.96],
   show: {
     opacity: 1,
     transition: {
-      when: "beforeChildren",
-      staggerChildren: 0.5,
+      delayChildren: 0.4,
     },
   },
 };
@@ -42,50 +28,94 @@ const container = {
 export default function Welcome() {
   return (
     <AnimatePresence>
-      <ContentContainer variants={container} initial="hidden" animate="show">
-        <ItemContainer
-          initial="closed"
-          animate="open"
-          exit="exit"
-          variants={showOnLoad}
-        >
-          <h1>
-            <span style={{ fontWeight: 700 }}>Hello World</span>
-          </h1>
-        </ItemContainer>
-
-        <ItemContainer
-          initial="closed"
-          animate="open"
-          exit="exit"
-          variants={showOnLoad}
-        >
-          <p>
-            <span style={{ fontWeight: 700 }}>
-              What are your plans for today?
-            </span>
-          </p>
-        </ItemContainer>
-
-        <ItemContainer
-          initial="closed"
-          animate="open"
-          exit="exit"
-          variants={showOnLoad}
-          css={{
-            display: "flex",
-            flexDirection: "row",
-            gap: 16,
-            mt: 16,
-          }}
-        >
-          <button onClick={() => console.log("clicked")}>Get Started</button>
-
-          <a href="https://github.com/Rychillie/listfy" target="__blank">
-            Learn More
-          </a>
-        </ItemContainer>
-      </ContentContainer>
+      <Header
+        initial={{ opacity: 0, y: -100 }}
+        exit={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.2,
+          when: "beforeChildren",
+          ...TransitionEvent,
+        }}
+      >
+        <Logo>
+          <LogoIcon />
+          Listfy
+        </Logo>
+      </Header>
+      <Container>
+        <Top>
+          <Title
+            initial={{ opacity: 0, y: -100, zIndex: -1 }}
+            exit={{ opacity: 0, y: -100, zIndex: -1 }}
+            animate={{ opacity: 1, y: 0, zIndex: 3 }}
+            transition={{
+              delay: 0.6,
+              ...TransitionEvent,
+            }}
+          >
+            The To-Do List You Need!
+          </Title>
+          <Paragraph
+            initial={{ opacity: 0, y: -100, zIndex: -1 }}
+            exit={{ opacity: 0, y: -100, zIndex: -1 }}
+            animate={{ opacity: 1, y: 0, zIndex: 2 }}
+            transition={{
+              delay: 0.5,
+              ...TransitionEvent,
+            }}
+          >
+            An open source To-do List App made by minimalists who don&apos;t
+            like to waste time.
+          </Paragraph>
+        </Top>
+        <Row>
+          <Button
+            onClick={() => console.log("Get started")}
+            initial={{ opacity: 0, y: -100, zIndex: -1 }}
+            exit={{ opacity: 0, y: -100, zIndex: -1 }}
+            animate={{ opacity: 1, y: 0, zIndex: 1 }}
+            transition={{
+              delay: 0.7,
+              ...TransitionEvent,
+            }}
+          >
+            Get started
+          </Button>
+          <BtnLink
+            href="https://github.com/Rychillie/listfy"
+            target="_blank"
+            initial={{ opacity: 0, y: -100, zIndex: -1 }}
+            exit={{ opacity: 0, y: -100, zIndex: -1 }}
+            animate={{ opacity: 1, y: 0, zIndex: 1 }}
+            transition={{
+              delay: 0.8,
+              ...TransitionEvent,
+            }}
+          >
+            GitHub
+          </BtnLink>
+        </Row>
+      </Container>
+      <Footer
+        initial={{ opacity: 0, y: 100, zIndex: -1 }}
+        exit={{ opacity: 0, y: 100, zIndex: -1 }}
+        animate={{ opacity: 1, y: 0, zIndex: 1 }}
+        transition={{
+          delay: 0.8,
+          ...TransitionEvent,
+        }}
+      >
+        <Link href="#">
+          <a>About</a>
+        </Link>
+        <Link href="#">
+          <a>Roadmap</a>
+        </Link>
+        <Link href="#">
+          <a>Pricing</a>
+        </Link>
+      </Footer>
     </AnimatePresence>
   );
 }
